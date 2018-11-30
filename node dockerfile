@@ -1,0 +1,8 @@
+--deploy jar
+docker build .
+docker build -t ggrangga/trucking_chooser .
+docker run -p 8081:8081 ggrangga/trucking_chooser
+
+--deploy html
+docker build -t index .
+docker run -p 8082:8082 index
