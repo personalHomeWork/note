@@ -1,3 +1,5 @@
+<<cmd deploy to docker>>
+
 --deploy jar
 docker build .
 docker build -t ggrangga/trucking_chooser .
@@ -6,3 +8,8 @@ docker run -p 8081:8081 ggrangga/trucking_chooser
 --deploy html
 docker build -t index .
 docker run -p 8082:8082 index
+
+--deploy vue --replace host: '?' => host: '0.0.0.0'
+docker build .
+docker build -t ggrangga/demo .
+docker run -p 8082:8082 ggrangga/demo
